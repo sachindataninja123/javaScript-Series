@@ -1,0 +1,15 @@
+body{
+    background-color: bisque;
+}
+#heading{
+    color:red;
+}
+.heading-class{
+    color: blue;
+    background-color: white;
+}
+p{
+    color:green;
+    background-color: pink;
+
+}

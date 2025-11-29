@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAD JOKE BY PROMISES</title>
+    <style>
+        body{
+            background-color: rgb(40, 36, 36);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 200px;
+        }
+        *{
+            margin: 0px; 
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 180px;
+            width: 500px;
+            border-radius: 6px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+
+        }
+        button{
+            border-radius: 30px;
+            color: black;
+            background-color: yellow;
+            border:2px solid black;
+            padding: 10px 25px;
+            font-size: 18px;
+            transition: 0.4s ease-in;
+        }
+        button:hover{
+            color: black;
+            background-color: white;
+            transition: 0.4s ease-out;
+            cursor: pointer;
+        }
+        .api-body{
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome To Dad Jokes!</h1>
+        <section class="api-body"></section>
+        <button id="fetchJoke">Get Another Joke</button>
+    </div>
+</body>
+<script>
+    const apiBody = document.querySelector(".api-body");
+    const apiUrl = "https://icanhazdadjoke.com/";
+
+
+    const fetchData = () => {
+        fetch(apiUrl, {
+            headers: {
+                Accept:"application/json",
+            },
+        }).then((res) => {
+            console.log(res);
+            return res.json();
+        }).then((data) => {
+            console.log(data.joke);
+            apiBody.innerHTML = data.joke;
+        }).catch((err) => {
+            console.log(err);
+        });
+
+    };
+    fetchData();
+
+    document.querySelector("#fetchJoke").addEventListener("click", fetchData);
+</script>
+</html>

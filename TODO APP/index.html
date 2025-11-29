@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* background-image: linear-gradient(to right, #080808, rgb(117, 116, 118)); */
+            /* background-Image : linear-gradient(to right, #37a6d9 , #da26a4) */
+            background-Image: linear-gradient(to right, #d33571, #0a5744);
+        }
+
+        h1 {
+            margin-top: 200px;
+            color: white;
+            font-size: 45px;
+        }
+
+        #inputValue {
+            padding: 14px;
+            border-radius: 6px;
+            border: black 1px solid;
+            font-size: 18px;
+        }
+
+        button {
+            color: black;
+            background-color: yellow;
+            font-size: 18px;
+            padding: 14px 25px;
+            border-radius: 30px;
+            border: transparent 2px solid;
+            transition: 0.3s ease-in;
+        }
+
+        button:hover {
+            box-shadow: inset 0 0 0 0.15rem #fff;
+            background-color: transparent;
+            border: black 2px solid;
+            transition: 0.1s ease-out;
+            overflow: hidden;
+            color: white;
+        }
+
+        .btn {
+            margin-left: 20px;
+        }
+
+
+        .main_todo_div {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 0.3fr;
+            align-items: center;
+            height: auto;
+            width: 30rem;
+        }
+
+        .main_todo_div li {
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <br>
+    <form>
+        <div>
+            <input type="text" name="list" id="inputValue" size="30">
+            <button class="btn">Add Todo</button>
+
+            <section class="todo-lists-elem">
+
+                <!-- <button class="deleteBtn">Delete</button> -->
+        </div>
+        </section>
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

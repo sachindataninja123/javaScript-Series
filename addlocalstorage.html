@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add data in local storage</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            color: white;
+            background-color: black;
+            transition: 0.3s ease-in;
+        }
+
+        button:hover {
+            color: black;
+            background-color: white;
+            border: 2px black solid;
+            transition: 0.3s ease-out;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add data in local storage</h1>
+    <div class="btns">
+        <button class="addBtn">Add data in local storage</button>
+        <button class="getBtn">Received data from local storage</button>
+        <button class="removeBtn">Remove data from local storage</button>
+    </div>
+
+    <script>
+        studentData = {
+            name: "sachin",
+            class: "b.tech",
+            cgpa: "8.2",
+            college: "lingayas vidyapeeth",
+            hobby: "listening music",
+            pincode: "121002",
+        }
+        let addBtn = document.querySelector(".addBtn");
+        let getBtn = document.querySelector(".getBtn");
+        let removeBtn = document.querySelector(".removeBtn");
+
+        addTodoList = () => {
+            // localStorage.setItem("objectData", studentData);
+            localStorage.setItem("objectData", JSON.stringify(studentData));
+        }
+
+        getTodoList = () => {
+            const retrievedStudentData = JSON.parse(localStorage.getItem("objectData"));
+            console.log(retrievedStudentData);
+        }
+
+        removeTodoList = () => {
+           const removeData =  localStorage.removeItem("objectData");
+           console.log(removeData);
+        }
+
+        addBtn.addEventListener("click", () => {
+            addTodoList();
+        });
+        getBtn.addEventListener("click", () => {
+            getTodoList();
+        });
+        removeBtn.addEventListener("click", () => {
+            removeTodoList();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1 id="heading">DOM API</h1>
+    <ul class="list_of_nodes">
+        <li>1 node</li>
+        <li>2 node</li>
+        <li>3 node</li>
+        <li>4 node</li>
+        <li style="display: none;">5 node</li>
+    </ul>
+<h1>DOM API 2</h1>
+<input type="text" name="myname">
+<button>Submit</button>
+
+<script>
+    let findElementsByClassname = document.getElementsByClassName("list_of_nodes");
+    for(let item of findElementsByClassname) {
+        console.log(item.innerHtML);
+        console.log(item.innertext);
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubbling in js</title>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 250px;
+        }
+
+        #outer {
+            height: 240px;
+            width: 300px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            transition: 0.3s ease-in;
+        }
+
+        #middle {
+            height: 160px;
+            width: 200px;
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            border: 2px solid black;
+            transition: 0.3s ease-in;
+        }
+
+        #inner {
+            height: 80px;
+            width: 100px;
+            background-color: pink;
+            padding: 20px;
+            border: 2px solid black;
+            transition: 0.3s ease-in;
+        }
+
+        #inner:hover {
+            background-color: aqua;
+            cursor: pointer;
+            transition: 0.1s ease-out;
+        }
+
+        #middle:hover {
+            background-color: red;
+            cursor: pointer;
+            transition: 0.1s ease-out;
+        }
+
+        #outer:hover {
+            background-color: blue;
+            cursor: pointer;
+            transition: 0.1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="outer">Outer
+            <div id="middle">
+                Middle
+                <div id="inner">Inner</div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+        const callOuter = (event) => {
+            console.table([
+                {
+                    Description: "Iam the outer one",
+                    Target: event.target,
+                    CurrentTarget: event.currentTarget,
+                },
+            ]);
+        };
+        const callMiddle = (event) => {
+            console.table([
+                {
+                    Description: "Iam the middle one",
+                    Target: event.target,
+                    CurrentTarget: event.currentTarget,
+                },
+            ]);
+            //  event.stopPropagation(); // To stop event Bubbling
+        };
+
+        const callInner = (event) => {
+            console.table([
+                {
+                    Description: "Iam the Inner one",
+                    Target: event.target,
+                    CurrentTarget: event.currentTarget,
+                },
+            ]);
+            // event.stopPropagation();  // To stop event Bubbling
+        };
+
+        // Event Bubbling
+        // document.getElementById("outer").addEventListener("click", callOuter);
+        // document.getElementById("middle").addEventListener("click", callMiddle);
+        //   document.getElementById("inner").addEventListener("click", callInner);
+
+
+
+        // Capturing Event
+        document.getElementById("outer").addEventListener("click", callOuter, true);
+        document.getElementById("middle").addEventListener("click", callMiddle, true);
+        document.getElementById("inner").addEventListener("click", callInner, true);
+
+    </script>
+</body>
+
+
+</html>

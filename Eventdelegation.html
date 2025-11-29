@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation </title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 200px;
+            background-color: rgb(33, 33, 33);
+            flex-direction: column;
+        }
+        h3{
+            color: white;
+            font-size: 1.5rem;
+        } 
+        #my_list{
+            color: white;
+            padding: 5px;
+            margin-top: -10px;;
+        }
+          #my_list li{
+            list-style: none;
+            font-size: 1.2rem;
+            padding: 10px 35px;
+            border: 1px solid white;
+            margin: 5px;
+          }
+          #my_list li:hover{
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            transform: scale(1.04);
+          }
+          #listValue {
+            font-size: 1.7rem;
+            color: white;
+          }
+    </style>
+</head>
+
+<body>
+    <h3>Q...  Which programming language you like the most?</h3>
+    <br>
+    <ul id="my_list">
+        <li>Java</li>
+        <li>C++</li>
+        <li>Java Script</li>
+        <li>Python</li>
+        <li>PHP</li>
+    </ul>
+    <p id="listValue"></p>
+    <script>
+
+        const getListDetails = (event) => {
+            console.log(event.target);
+
+            document.getElementById("listValue").innerHTML =`My favourite langauge is  ${event.target.innerText}`;
+
+        } 
+
+        document.getElementById("my_list").addEventListener("click", getListDetails);
+    </script>
+</body>
+
+</html>

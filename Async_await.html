@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        async function abcd() {
+            let raw = await fetch("https://randomuser.me/api/")
+            let answer = await raw.json();
+            console.log(answer);
+        }
+        abcd();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listener</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        button{
+            padding: 10px 30px ;
+            border-radius: 4px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- start inline event -->
+
+<h1>Inline Event Listener</h1>
+<button onclick="alert('welcome')">onclick</button>
+<button ondblclick="alert('welcome to js course')">ondblclick</button>
+<button onmouseover="alert('welcome again')">onmouseover</button>
+ <!-- end inline event -->
+
+  <!-- start DOM event -->
+   
+<!-- <h1>DOM Event Listener</h1>
+<button class="btn1" >onclick</button>
+<button class="btn2" >ondblclick</button>
+<button class="btn3" >onmouseover</button> -->
+
+  <!-- End DOM event -->
+
+  <h1>addeventlistener Event Listener</h1>
+<button class="btn1" >onclick</button>
+<button class="btn2" >ondblclick</button>
+<button class="btn3" >onmouseover</button>
+   <script>
+    //start DOM event
+    // document.querySelector(".btn1").onclick = function () {
+    //     alert("hello");
+    // };
+    //   document.querySelector(".btn2").ondblclick = function () {
+    //     alert("hello world");
+    // };
+    //  document.querySelector(".btn3").onmouseover= function () {
+    //     alert("hello javascript world ");
+    // };
+
+    //start addeventlistener event
+    document.querySelector(".btn1").addEventListener("click", function () {
+        alert("hello world");
+    });
+     document.querySelector(".btn2").addEventListener("dblclick", () => {
+        alert("hello world again");
+    });
+    document.querySelector(".btn3").addEventListener("mouseover", () => {
+        alert("Again Hello !")
+    })
+
+   </script>
+
+</body>
+</html>

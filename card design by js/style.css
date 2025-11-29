@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card{
+    display: flex;
+    border: 1px solid #000;
+    margin: 20px;
+    width:940px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+.text h2,p{
+    padding: 10px 0;
+}
+.image{
+    position: relative;
+}
+.capsule{
+    width: 45px;
+    height: 23px;
+    background-color: rgb(43, 41, 41);  
+    position: absolute;
+    left:190px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+.capsule p{
+    color: #fff;
+    font-size: 14px;
+}

@@ -1,0 +1,10 @@
+.content{
+    width: 300px;
+    height: 300px;
+    font-size: 20px;
+    background-color: blueviolet;
+    color: white;
+}
+.newClass{
+    background-color: red;
+}
